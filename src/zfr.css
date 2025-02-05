@@ -595,11 +595,20 @@
   .end-2 {
     inset-inline-end: calc(var(--spacing) * 2);
   }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
+  }
   .isolate {
     isolation: isolate;
   }
   .isolation-auto {
     isolation: auto;
+  }
+  .z-\[-10\] {
+    z-index: -10;
   }
   .z-auto {
     z-index: auto;
@@ -709,6 +718,9 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .my-\[20px\] {
+    margin-block: 20px;
+  }
   .box-border {
     box-sizing: border-box;
   }
@@ -796,6 +808,9 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
+  .h-full {
+    height: 100%;
+  }
   .h-screen {
     height: 100vh;
   }
@@ -808,11 +823,17 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
+  }
+  .w-\[50px\] {
+    width: 50px;
+  }
+  .w-fit {
+    width: fit-content;
+  }
+  .w-full {
+    width: 100%;
   }
   .w-screen {
     width: 100vw;
@@ -1222,9 +1243,28 @@
   .justify-items-stretch {
     justify-items: stretch;
   }
+  .gap-x-1 {
+    column-gap: calc(var(--spacing) * 1);
+  }
+  .gap-x-24 {
+    column-gap: calc(var(--spacing) * 24);
+  }
   .space-y-reverse {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
+    }
+  }
+  .gap-y-6 {
+    row-gap: calc(var(--spacing) * 6);
+  }
+  .gap-y-10 {
+    row-gap: calc(var(--spacing) * 10);
+  }
+  .space-x-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 6) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
   .space-x-15 {
@@ -1434,6 +1474,9 @@
     --tw-border-style: solid;
     border-style: solid;
   }
+  .border-\[\#d7edfd\] {
+    border-color: #d7edfd;
+  }
   .bg-\(--my_variable\) {
     background-color: var(--my_variable);
   }
@@ -1460,6 +1503,9 @@
   }
   .bg-red-500\/\[50\%\] {
     background-color: color-mix(in oklab, var(--color-red-500) 50%, transparent);
+  }
+  .bg-white {
+    background-color: var(--color-white);
   }
   .-bg-conic {
     --tw-gradient-position: in oklab;
@@ -1630,26 +1676,17 @@
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
-  .px-3 {
-    padding-inline: calc(var(--spacing) * 3);
-  }
-  .px-3\.5 {
-    padding-inline: calc(var(--spacing) * 3.5);
-  }
   .px-7 {
     padding-inline: calc(var(--spacing) * 7);
   }
-  .py-2 {
-    padding-block: calc(var(--spacing) * 2);
-  }
-  .py-3 {
-    padding-block: calc(var(--spacing) * 3);
+  .px-8 {
+    padding-inline: calc(var(--spacing) * 8);
   }
   .py-3\.5 {
     padding-block: calc(var(--spacing) * 3.5);
   }
-  .py-7 {
-    padding-block: calc(var(--spacing) * 7);
+  .py-5 {
+    padding-block: calc(var(--spacing) * 5);
   }
   .text-center {
     text-align: center;
@@ -1696,9 +1733,29 @@
   .font-circular {
     font-family: var(--font-circular);
   }
+  .text-7xl {
+    font-size: var(--text-7xl);
+    line-height: var(--tw-leading, var(--text-7xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .leading-\[79px\] {
+    --tw-leading: 79px;
+    line-height: 79px;
+  }
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
   }
   .text-balance {
     text-wrap: balance;
@@ -1772,6 +1829,12 @@
   }
   .\[color\:red\]\/50\! {
     color: color-mix(in oklab, red 50%, transparent) !important;
+  }
+  .text-\[\#00487B\] {
+    color: #00487B;
+  }
+  .text-primary {
+    color: var(--color-primary);
   }
   .text-text-primary {
     color: var(--color-text-primary);
@@ -1926,6 +1989,9 @@
   }
   .scheme-only-light {
     color-scheme: only light;
+  }
+  .opacity-5 {
+    opacity: 5%;
   }
   .mix-blend-plus-darker {
     mix-blend-mode: plus-darker;
@@ -2236,13 +2302,6 @@
       }
     }
   }
-  .hover\:cursor-progress {
-    &:hover {
-      @media (hover: hover) {
-        cursor: progress;
-      }
-    }
-  }
   .\*\:hover\:text-text-primary {
     :is(& > *) {
       &:hover {
@@ -2381,6 +2440,10 @@
   initial-value: 0;
 }
 @property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
