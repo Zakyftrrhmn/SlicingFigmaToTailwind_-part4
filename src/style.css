@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Circular STD";
+  src: url("./assets/fonts/CircularStd-Book.woff2") format("woff");
+}
+
+@theme {
+  --color-primary: #00a3cb;
+  --color-secondary: #26454d;
+  --color-tertiary: #00487b;
+
+  --color-box-primary: #cc8100;
+  --color-box-secondary: #cc3e00;
+
+  --color-text-primary: #191825;
+  --color-text-secondary: #53525c;
+  --color-text-tertiary: #8c8b92;
+  --color-text-Quaternary: #c5c5c8;
+  --color-text-Quinary: #e8e8e9;
+
+  --font-circular: "Circular STD", sans-serif;
+}
