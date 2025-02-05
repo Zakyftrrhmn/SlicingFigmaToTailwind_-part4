@@ -3,10 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Travel - Landing page figma template (Community)</title>
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="zfr.css" />
   </head>
-  <body></body>
+  <body class="font-circular">
+    <!-- Navbar -->
+    <nav class="max-w-6xl mx-auto flex items-center justify-between p-6">
+      <img src="assets/image/1 logo.png" class="hover:cursor-pointer" alt="" />
+      <ul
+        class="flex flex-row space-x-15 text-text-tertiary *:hover:text-text-primary"
+      >
+        <li><a href="#Home" class="text-text-primary">Home</a></li>
+        <li><a href="#Discover">Discover</a></li>
+        <li><a href="#SpecialDeals">Special Deals</a></li>
+        <li><a href="#Contact">Contact</a></li>
+      </ul>
+      <div class="flex flex-row">
+        <button class="px-7 py-3.5 hover:cursor-pointer">Login</button>
+        <button
+          class="px-7 py-3.5 hover:cursor-pointer rounded-full bg-primary text-white shadow-2xl"
+        >
+          Sign Up
+        </button>
+      </div>
+    </nav>
+  </body>
 </html>

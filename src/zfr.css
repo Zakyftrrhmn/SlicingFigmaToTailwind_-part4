@@ -706,6 +706,9 @@
       max-width: 96rem !important;
     }
   }
+  .mx-auto {
+    margin-inline: auto;
+  }
   .box-border {
     box-sizing: border-box;
   }
@@ -805,11 +808,17 @@
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
   .w-screen {
     width: 100vw;
+  }
+  .max-w-6xl {
+    max-width: var(--container-6xl);
   }
   .max-w-none {
     max-width: none;
@@ -1218,6 +1227,13 @@
       --tw-space-y-reverse: 1;
     }
   }
+  .space-x-15 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 15) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 15) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
   .space-x-reverse {
     :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 1;
@@ -1306,6 +1322,9 @@
   }
   .rounded {
     border-radius: 0.25rem;
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
   }
   .rounded-s {
     border-start-start-radius: 0.25rem;
@@ -1429,6 +1448,9 @@
   }
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
+  }
+  .bg-primary {
+    background-color: var(--color-primary);
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
@@ -1605,6 +1627,30 @@
   .object-top {
     object-position: top;
   }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-3\.5 {
+    padding-inline: calc(var(--spacing) * 3.5);
+  }
+  .px-7 {
+    padding-inline: calc(var(--spacing) * 7);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-3\.5 {
+    padding-block: calc(var(--spacing) * 3.5);
+  }
+  .py-7 {
+    padding-block: calc(var(--spacing) * 7);
+  }
   .text-center {
     text-align: center;
   }
@@ -1646,6 +1692,9 @@
   }
   .align-top {
     vertical-align: top;
+  }
+  .font-circular {
+    font-family: var(--font-circular);
   }
   .leading-none {
     --tw-leading: 1;
@@ -1723,6 +1772,15 @@
   }
   .\[color\:red\]\/50\! {
     color: color-mix(in oklab, red 50%, transparent) !important;
+  }
+  .text-text-primary {
+    color: var(--color-text-primary);
+  }
+  .text-text-tertiary {
+    color: var(--color-text-tertiary);
+  }
+  .text-white {
+    color: var(--color-white);
   }
   .capitalize {
     text-transform: capitalize;
@@ -1885,6 +1943,10 @@
   }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-2xl {
+    --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-initial {
@@ -2166,6 +2228,29 @@
   }
   .transform-view {
     transform-box: view-box;
+  }
+  .hover\:cursor-pointer {
+    &:hover {
+      @media (hover: hover) {
+        cursor: pointer;
+      }
+    }
+  }
+  .hover\:cursor-progress {
+    &:hover {
+      @media (hover: hover) {
+        cursor: progress;
+      }
+    }
+  }
+  .\*\:hover\:text-text-primary {
+    :is(& > *) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-text-primary);
+        }
+      }
+    }
   }
 }
 @font-face {
